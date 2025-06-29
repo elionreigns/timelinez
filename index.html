@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO & Social Sharing Meta Tags -->
+    <title>ETP: The Prophetic Timeline</title>
+    <meta name="description" content="This is Eric the Prophet's life in a nutshell. Explore the prophetic timeline of ETP's life, featured on ErictheProphet.com. AKA E Lion and the Prayer Doctor." />
+    <meta name="keywords" content="Eric the Prophet, ETP, E Lion, Prayer Doctor, timeline, prophecy, history, Schaefer" />
+    <meta name="author" content="Eric the Prophet" />
+    <link rel="canonical" href="https://www.erictheprophet.com/timeline/" />
+
+    <!-- Open Graph / Facebook / iMessage -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.erictheprophet.com/timeline/" />
+    <meta property="og:title" content="ETP: The Prophetic Timeline" />
+    <meta property="og:description" content="This is Eric the Prophet's life in a nutshell. Explore the prophetic timeline of ETP's life, featured on ErictheProphet.com." />
+    <meta property="og:image" content="https://www.erictheprophet.com/media/etp-logo.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.erictheprophet.com/timeline/" />
+    <meta property="twitter:title" content="ETP: The Prophetic Timeline" />
+    <meta property="twitter:description" content="This is Eric the Prophet's life in a nutshell. Explore the prophetic timeline of ETP's life, featured on ErictheProphet.com." />
+    <meta property="twitter:image" content="https://www.erictheprophet.com/media/etp-logo.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Lato', 'sans-serif'],
+              heading: ['Bebas Neue', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-up': 'fade-in-up 0.4s ease-out forwards',
+              'fade-in': 'fade-in 0.3s ease-out forwards',
+              'pulse-glow': 'pulse-glow 2.5s ease-out infinite',
+              'tick-bob': 'tick-bob 0.15s ease-out',
+            },
+            keyframes: {
+              'fade-in-up': {
+                'from': { opacity: '0', transform: 'translateY(20px)' },
+                'to': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'fade-in': {
+                'from': { opacity: '0' },
+                'to': { opacity: '1' },
+              },
+              'pulse-glow': {
+                '0%': { 
+                  boxShadow: '0 0 0 0 rgba(255, 255, 255, 0.7)',
+                  transform: 'scale(1)',
+                },
+                '50%': { 
+                  boxShadow: '0 0 10px 8px rgba(255, 255, 255, 0)',
+                  transform: 'scale(1.1)',
+                },
+                '100%': { 
+                  boxShadow: '0 0 0 0 rgba(255, 255, 255, 0)',
+                  transform: 'scale(1)',
+                },
+              },
+              'tick-bob': {
+                '0%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-4px)' },
+                '100%': { transform: 'translateY(0)' },
+              },
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #000000;
+      }
+      .splash-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000000;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        transition: opacity 0.7s ease-out;
+        pointer-events: none; /* Allow interaction with app underneath during fade */
+      }
+      .splash-screen.fade-out {
+        opacity: 0;
+      }
+      .splash-logo {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        margin-bottom: 20px;
+        animation: splash-pulse 2s infinite ease-in-out;
+      }
+      .splash-text {
+        color: white;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 0.2em;
+        opacity: 0.8;
+      }
+      @keyframes splash-pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+       /* Custom scrollbar styles */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0-rc.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0-rc.0/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-black font-sans overflow-hidden" data-main-background="https://www.erictheprophet.com/media/etp-logo.jpg">
+    <div id="splash-screen" class="splash-screen">
+      <img src="https://www.erictheprophet.com/media/etp-logo.jpg" alt="Eric the Prophet Logo" class="splash-logo" />
+      <p class="splash-text">LOADING...</p>
+    </div>
+    <div id="root"></div>
+    <!-- Audio element for the timeline tick sound -->
+    <audio id="tick-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-game-ball-tap-2073.mp3" preload="auto"></audio>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "name": "Interactive History Timeline",
+  "description": "A visually engaging, scrollable timeline application to display historical events, inspired by Tiki-Toki. Users can easily add new events and sections through a data file.",
+  "requestFramePermissions": []
+}
