@@ -90,24 +90,37 @@ const App: React.FC = () => {
     timelineRef.current?.scrollToToday();
   };
 
+  const handleTestAudio = () => {
+    const audio = document.getElementById('tick-sound') as HTMLAudioElement;
+    if (audio) {
+      audio.volume = 0.3;
+      audio.currentTime = 0;
+      audio.play().catch(e => {
+        console.log('Audio test failed:', e);
+        alert('Audio is blocked by browser. Please interact with the page first.');
+      });
+    }
+  };
 
   return (
     <main className="h-screen w-screen flex flex-col overflow-hidden text-white font-sans bg-black">
-      <header className="absolute top-0 left-0 p-4 md:p-6 z-30 w-full flex justify-between items-center bg-black/20 backdrop-blur-md border-b border-white/10">
+      <header className="absolute top-0 left-0 p-3 md:p-6 z-30 w-full flex justify-between items-center bg-gradient-to-r from-black/80 to-gray-900/80 backdrop-blur-md border-b border-yellow-400/30">
         <div>
-          <h1 className="text-2xl md:text-4xl font-heading tracking-wider filter drop-shadow(0 2px 2px rgba(0,0,0,0.5))">ETP: The Prophetic Timeline</h1>
-          <p className="text-sm md:text-base text-white/80 filter drop-shadow(0 1px 2px rgba(0,0,0,0.5))">From 1900 to the Future</p>
+          <h1 className="text-xl md:text-3xl lg:text-4xl font-heading tracking-wider filter drop-shadow(0 2px 2px rgba(0,0,0,0.5)) text-yellow-400">ETP: The Prophetic Timeline</h1>
+          <p className="text-xs md:text-base text-yellow-200/80 filter drop-shadow(0 1px 2px rgba(0,0,0,0.5))">From 1900 to the Future</p>
         </div>
-        <div className="text-sm md:text-base text-right hidden sm:block">
-          <a href="https://www.erictheprophet.com" target="_blank" rel="noopener noreferrer" className="opacity-75 hover:opacity-100 transition-opacity filter drop-shadow(0 1px 2px rgba(0,0,0,0.5))">
+        <div className="text-xs md:text-base text-right hidden sm:block">
+          <a href="https://www.erictheprophet.com" target="_blank" rel="noopener noreferrer" className="opacity-75 hover:opacity-100 transition-opacity filter drop-shadow(0 1px 2px rgba(0,0,0,0.5)) text-yellow-200">
             ErictheProphet.com
           </a>
-          <button
-            onClick={handleScrollToToday}
-            className="block mt-1 text-xs text-yellow-400 hover:text-yellow-300 transition-colors filter drop-shadow(0 1px 2px rgba(0,0,0,0.5)) focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded"
-          >
-            Scroll to Today
-          </button>
+          <div className="flex gap-2 mt-1 justify-end">
+            <button
+              onClick={handleScrollToToday}
+              className="text-xs text-yellow-400 hover:text-yellow-300 transition-colors filter drop-shadow(0 1px 2px rgba(0,0,0,0.5)) focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded"
+            >
+              Scroll to Today
+            </button>
+          </div>
         </div>
       </header>
 

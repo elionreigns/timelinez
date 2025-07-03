@@ -9,6 +9,9 @@ import { TimelineSection } from '../types.ts';
   You can add new sections or new events inside existing sections.
 */
 
+// Add a placeholder image URL for events that don't have a real image
+const PLACEHOLDER_IMAGE_URL = 'https://via.placeholder.com/400x300?text=No+Image';
+
 export const timelineData: TimelineSection[] = [
   {
     id: 'schaefer-history',
@@ -26,7 +29,70 @@ export const timelineData: TimelineSection[] = [
     startYear: 1988,
     endYear: 2006,
     backgroundImage: 'https://images.unsplash.com/photo-1475666675596-c74e83b76237?q=80&w=2574&auto=format&fit=crop',
-    events: [],
+    events: [
+      {
+        year: 1988,
+        month: 8,
+        day: 14,
+        title: "Born at St. Joseph's Hospital",
+        description: "I was born at St. Joseph's Hospital in Orange County, marking the beginning of my journey.",
+        media: [{
+          url: PLACEHOLDER_IMAGE_URL,
+          type: 'image',
+        }],
+      },
+      {
+        year: 1988,
+        endYear: 1989,
+        title: 'Early Years in Hawaii',
+        description: 'Spent my first year of life in the beautiful islands of Hawaii.',
+        media: [{
+          url: PLACEHOLDER_IMAGE_URL,
+          type: 'image',
+        }],
+      },
+      {
+        year: 1989,
+        endYear: 2002,
+        title: 'Growing up in California',
+        description: 'The majority of my childhood and early adolescence was spent in California.',
+        media: [{
+          url: PLACEHOLDER_IMAGE_URL,
+          type: 'image',
+        }],
+      },
+      {
+        year: 2002,
+        endYear: 2006,
+        title: 'Attended Kaiser High School',
+        description: 'Started high school at Kaiser High in Hawaii.',
+        media: [{
+          url: PLACEHOLDER_IMAGE_URL,
+          type: 'image',
+        }],
+      },
+      {
+        year: 2004,
+        endYear: 2005,
+        title: 'Kaiser High School Diving Team',
+        description: 'Competed on the high school diving team.',
+        media: [{
+          url: 'https://www.erictheprophet.com/media/diving.mp4',
+          type: 'video',
+        }],
+      },
+      {
+        year: 2006,
+        month: 6,
+        day: 2,
+        title: 'Graduated from Kaiser High School',
+        description: 'Completed high school, graduating from Kaiser High.',
+        media: [{
+          url: PLACEHOLDER_IMAGE_URL,
+          type: 'image',
+        }],
+      },
+    ],
   },
   {
     id: 'adulthood',
@@ -34,11 +100,22 @@ export const timelineData: TimelineSection[] = [
     startYear: 2007,
     endYear: 2018,
     backgroundImage: 'https://images.unsplash.com/photo-1505623772559-2ed4a055e144?q=80&w=2574&auto=format&fit=crop',
-    events: [],
+    events: [
+      {
+        year: 2012,
+        endYear: 2013,
+        title: 'Travel to Israel',
+        description: 'Embarked on a transformative trip to Israel, exploring its history and culture.',
+        media: [{
+          url: 'https://www.erictheprophet.com/media/jerusalem.jpg',
+          type: 'image',
+        }],
+      },
+    ],
   },
   {
-    id: 'incarceration',
-    title: 'Incarceration',
+    id: 'occc',
+    title: 'OCCC',
     startYear: 2019,
     endYear: 2019,
     backgroundImage: 'https://images.unsplash.com/photo-1590425298993-49273950b7a8?q=80&w=2670&auto=format&fit=crop',
@@ -67,8 +144,8 @@ export const timelineData: TimelineSection[] = [
         title: '40 Day Fast',
         description: 'Undertook a 40 day fast for spiritual clarity and physical discipline.',
         media: [{
-            url: 'https://images.unsplash.com/photo-1579047036995-5c1797c3c544?q=80&w=2574&auto=format&fit=crop',
-            type: 'image'
+          url: 'https://images.unsplash.com/photo-1579047036995-5c1797c3c544?q=80&w=2574&auto=format&fit=crop',
+          type: 'image'
         }]
       }
     ],
@@ -101,14 +178,14 @@ export const timelineData: TimelineSection[] = [
         title: 'The Highway Band at Hebrew Fest',
         description: 'Our band, The Highway Band, had a memorable performance at Hebrew Fest, playing over multiple days and sharing our music with a fantastic crowd.',
         media: [
-            {
-                url: 'https://videos.pexels.com/video-files/5092036/5092036-hd_1280_720_30fps.mp4',
-                type: 'video'
-            },
-            {
-                url: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=2574&auto=format&fit=crop',
-                type: 'image'
-            }
+          {
+            url: 'https://videos.pexels.com/video-files/5092036/5092036-hd_1280_720_30fps.mp4',
+            type: 'video'
+          },
+          {
+            url: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=2574&auto=format&fit=crop',
+            type: 'image'
+          }
         ]
       },
       {
@@ -122,7 +199,7 @@ export const timelineData: TimelineSection[] = [
           type: 'image'
         }]
       },
-       {
+      {
         year: 2025,
         month: 6,
         day: 27,
@@ -135,12 +212,24 @@ export const timelineData: TimelineSection[] = [
       },
     ],
   },
-   {
+  {
     id: 'future-era',
     title: 'Into The Future',
     startYear: 2026,
     endYear: 2040,
     backgroundImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2670&auto=format&fit=crop',
-    events: [],
+    events: [
+      {
+        year: 2027,
+        month: 8,
+        day: 1,
+        title: 'Standing in Faith: Cedar',
+        description: 'Cedar is the planned name if Ashley and I were to ever have a son and we want to figure out if IVF or surrogacy is the best option, we are hoping to find out if we should get her tubes untied or not',
+        media: [{
+          url: 'https://www.erictheprophet.com/media/cedar.png',
+          type: 'image',
+        }],
+      },
+    ],
   },
 ];
