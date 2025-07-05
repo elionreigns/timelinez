@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { TimelineEvent } from '../types.ts';
 import { CloseIcon, ChevronLeftIcon, ChevronRightIcon } from './Icons.tsx';
@@ -72,11 +71,11 @@ const EventCard: React.FC<EventCardProps> = ({ event, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fade-in"
+      className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fade-in transition-all duration-700 ease-out"
       onClick={handleBackdropClick}
     >
       <div
-        className="bg-white/95 text-gray-800 rounded-lg shadow-2xl w-full max-w-md md:max-w-2xl lg:max-w-3xl max-h-[90vh] overflow-y-auto relative animate-fade-in-up no-scrollbar border-t-2 border-white/20"
+        className="bg-white/95 text-gray-800 rounded-lg shadow-2xl w-full max-w-md md:max-w-2xl lg:max-w-3xl max-h-[90vh] overflow-y-auto relative animate-fade-in-up no-scrollbar border-t-2 border-white/20 transition-all duration-700 ease-out"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="p-6 md:p-8">
@@ -88,9 +87,9 @@ const EventCard: React.FC<EventCardProps> = ({ event, onClose }) => {
             <CloseIcon className="w-6 h-6" />
           </button>
 
-          <div className="flex justify-between items-start mb-4 gap-4 pr-12">
+          <div className="flex flex-col items-start mb-4 gap-1 pr-12">
             <h2 className="text-4xl md:text-5xl font-heading text-gray-900">{event.title}</h2>
-            <p className="text-base md:text-lg font-bold text-gray-500 text-right whitespace-nowrap flex-shrink-0">{formatDate(event)}</p>
+            <p className="text-base md:text-lg font-bold text-gray-500 text-left whitespace-nowrap flex-shrink-0">{formatDate(event)}</p>
           </div>
 
           {currentMedia && (

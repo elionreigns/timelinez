@@ -43,14 +43,14 @@
             heading: ['Bebas Neue', 'sans-serif'],
           },
           animation: {
-            'fade-in-up': 'fade-in-up 0.4s ease-out forwards',
-            'fade-in': 'fade-in 0.3s ease-out forwards',
-            'pulse-glow': 'pulse-glow 2.5s ease-out infinite',
-            'tick-bob': 'tick-bob 0.15s ease-out',
+            'fade-in-up': 'fade-in-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+            'fade-in': 'fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+            'pulse-glow': 'pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'tick-bob': 'tick-bob 0.3s cubic-bezier(0.4, 0, 0.2, 1) ease-out',
           },
           keyframes: {
             'fade-in-up': {
-              'from': { opacity: '0', transform: 'translateY(20px)' },
+              'from': { opacity: '0', transform: 'translateY(30px)' },
               'to': { opacity: '1', transform: 'translateY(0)' },
             },
             'fade-in': {
@@ -63,8 +63,8 @@
                 transform: 'scale(1)',
               },
               '50%': {
-                boxShadow: '0 0 10px 8px rgba(255, 255, 255, 0)',
-                transform: 'scale(1.1)',
+                boxShadow: '0 0 15px 10px rgba(255, 255, 255, 0)',
+                transform: 'scale(1.05)',
               },
               '100%': {
                 boxShadow: '0 0 0 0 rgba(255, 255, 255, 0)',
@@ -73,7 +73,7 @@
             },
             'tick-bob': {
               '0%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-4px)' },
+              '50%': { transform: 'translateY(-6px)' },
               '100%': { transform: 'translateY(0)' },
             },
           }
@@ -99,7 +99,7 @@
       justify-content: center;
       align-items: center;
       opacity: 1;
-      transition: opacity 0.7s ease-out;
+      transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
       pointer-events: none;
       /* Allow interaction with app underneath during fade */
     }
@@ -113,7 +113,7 @@
       height: 150px;
       object-fit: contain;
       margin-bottom: 20px;
-      animation: splash-pulse 2s infinite ease-in-out;
+      animation: splash-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite ease-in-out;
     }
 
     .splash-text {
@@ -122,6 +122,7 @@
       font-size: 1.5rem;
       letter-spacing: 0.2em;
       opacity: 0.8;
+      animation: splash-text-fade 2s cubic-bezier(0.4, 0, 0.2, 1) ease-in-out infinite alternate;
     }
 
     @keyframes splash-pulse {
@@ -130,11 +131,21 @@
       }
 
       50% {
-        transform: scale(1.05);
+        transform: scale(1.08);
       }
 
       100% {
         transform: scale(1);
+      }
+    }
+
+    @keyframes splash-text-fade {
+      0% {
+        opacity: 0.6;
+      }
+
+      100% {
+        opacity: 1;
       }
     }
 

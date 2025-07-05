@@ -104,19 +104,25 @@ const App: React.FC = () => {
 
   return (
     <main className="h-screen w-screen flex flex-col overflow-hidden text-white font-sans bg-black">
-      <header className="absolute top-0 left-0 p-3 md:p-6 z-30 w-full flex justify-between items-center bg-gradient-to-r from-black/80 to-gray-900/80 backdrop-blur-md border-b border-yellow-400/30">
+      <header className="absolute top-0 left-0 p-3 md:p-6 z-30 w-full flex justify-between items-center bg-gradient-to-r from-black/80 to-gray-900/80 backdrop-blur-md border-b border-yellow-400/30 transition-all duration-500 ease-out">
         <div>
-          <h1 className="text-xl md:text-3xl lg:text-4xl font-heading tracking-wider filter drop-shadow(0 2px 2px rgba(0,0,0,0.5)) text-yellow-400">ETP: The Prophetic Timeline</h1>
-          <p className="text-xs md:text-base text-yellow-200/80 filter drop-shadow(0 1px 2px rgba(0,0,0,0.5))">From 1900 to the Future</p>
+          <h1 className="text-xl md:text-3xl lg:text-4xl font-heading tracking-wider filter drop-shadow(0 2px 2px rgba(0,0,0,0.5)) text-yellow-400 transition-all duration-300 ease-out">ETP: The Prophetic Timeline</h1>
+          <p className="text-xs md:text-base text-yellow-200/80 filter drop-shadow(0 1px 2px rgba(0,0,0,0.5)) transition-all duration-300 ease-out">From 1900 to the Future</p>
         </div>
         <div className="text-xs md:text-base text-right hidden sm:block">
-          <a href="https://www.erictheprophet.com" target="_blank" rel="noopener noreferrer" className="opacity-75 hover:opacity-100 transition-opacity filter drop-shadow(0 1px 2px rgba(0,0,0,0.5)) text-yellow-200">
+          <a href="https://www.erictheprophet.com" target="_blank" rel="noopener noreferrer" className="opacity-75 hover:opacity-100 transition-all duration-500 ease-out filter drop-shadow(0 1px 2px rgba(0,0,0,0.5)) text-yellow-200">
             ErictheProphet.com
           </a>
           <div className="flex gap-2 mt-1 justify-end">
             <button
+              onClick={handleTestAudio}
+              className="text-xs text-yellow-400 hover:text-yellow-300 transition-all duration-500 ease-out filter drop-shadow(0 1px 2px rgba(0,0,0,0.5)) focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded"
+            >
+              Test Sound
+            </button>
+            <button
               onClick={handleScrollToToday}
-              className="text-xs text-yellow-400 hover:text-yellow-300 transition-colors filter drop-shadow(0 1px 2px rgba(0,0,0,0.5)) focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded"
+              className="text-xs text-yellow-400 hover:text-yellow-300 transition-all duration-500 ease-out filter drop-shadow(0 1px 2px rgba(0,0,0,0.5)) focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded"
             >
               Scroll to Today
             </button>
@@ -128,7 +134,7 @@ const App: React.FC = () => {
         {mainBackground ? (
           <>
             <div
-              className="absolute inset-0 w-full h-full bg-no-repeat bg-center transition-transform duration-100 linear"
+              className="absolute inset-0 w-full h-full bg-no-repeat bg-center transition-all duration-1000 ease-out"
               style={{
                 backgroundImage: `url(${mainBackground})`,
                 backgroundSize: 'contain',

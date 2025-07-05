@@ -129,19 +129,19 @@ const EventMarker: React.FC<{
       }}
       aria-label={`View event: ${event.title}`}
     >
-      <div className="whitespace-nowrap text-xs mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-2 py-1 rounded-md bg-black/90 text-white shadow-lg transform -translate-x-1/2 left-1/2 absolute bottom-full">
+      <div className="whitespace-nowrap text-xs mb-2 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out px-2 py-1 rounded-md bg-black/90 text-yellow-400 shadow-lg transform -translate-x-1/2 left-1/2 absolute bottom-full">
         {event.title}
       </div>
       <div
-        className="w-full h-full rounded-md flex flex-col items-center justify-center transition-all duration-300 text-white p-1"
+        className="w-full h-full rounded-md flex flex-col items-center justify-center transition-all duration-500 ease-out text-white p-1"
         style={{
           background: 'linear-gradient(145deg, #787878, #232323)',
           boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.2), inset 0 -1px 1px rgba(0,0,0,0.4), 0 2px 5px rgba(0,0,0,0.5)',
           border: '1px solid rgba(0,0,0,0.7)'
         }}
       >
-        <span className="text-base transition-transform duration-300 group-hover:scale-110">⏳</span>
-        <p className="text-[10px] leading-tight mt-0.5 text-white/80">{formatShortDate(event)}</p>
+        <span className="text-sm md:text-base transition-transform duration-500 ease-out group-hover:scale-125">⏳</span>
+        <p className="text-[8px] md:text-[10px] leading-tight mt-0.5 text-white/80 font-semibold transition-all duration-300 ease-out">{formatShortDate(event)}</p>
       </div>
     </button>
   );
@@ -300,13 +300,13 @@ const Timeline = forwardRef<TimelineHandle, TimelineProps>(({ data, onEventSelec
       <button
         onClick={() => navigate('left')}
         disabled={!canScrollLeft}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-2 md:p-3 m-1 md:m-2 bg-black/60 rounded-full text-yellow-400 hover:bg-black/80 hover:text-yellow-300 transition-all disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-yellow-400/50"
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-2 md:p-3 m-1 md:m-2 bg-black/60 rounded-full text-yellow-400 hover:bg-black/80 hover:text-yellow-300 transition-all duration-500 ease-out disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-yellow-400/50"
         aria-label="Scroll left"
       >
         <ChevronLeftIcon className="w-6 h-6 md:w-8 md:h-8" />
       </button>
 
-      <div className={`absolute top-0 left-1/2 -translate-x-1/2 z-40 ${isTicking ? 'animate-tick-bob' : ''}`}>
+      <div className={`absolute top-0 left-1/2 -translate-x-1/2 z-40 transition-transform duration-300 ease-out ${isTicking ? 'animate-tick-bob' : ''}`}>
         <div className="w-0 h-0 border-x-6 md:border-x-8 border-x-transparent border-t-[10px] md:border-t-[12px] border-t-blue-500 drop-shadow-lg"></div>
       </div>
 
@@ -340,14 +340,14 @@ const Timeline = forwardRef<TimelineHandle, TimelineProps>(({ data, onEventSelec
                 {/* Color section */}
                 <div
                   className="relative flex justify-center items-center p-1 md:p-2"
-                  style={{ background: bgColor, height: '2rem', minHeight: '2rem' }}
+                  style={{ background: bgColor, height: '3rem', minHeight: '3rem' }}
                 >
                   <div
                     className="absolute inset-0 w-full h-full pointer-events-none"
                     style={{ backgroundImage: 'linear-gradient(180deg, hsla(0,0%,100%,.3) 0, hsla(0,0%,100%,.1) 50%, transparent 51%, hsla(0,0%,0%,.1))' }}
                   />
-                  <div className={`absolute top-0.5 left-1 md:top-1 md:left-2 font-heading text-xs md:text-base ${textColor} opacity-80 font-bold`}>{section.startYear}</div>
-                  <div className={`absolute top-0.5 right-1 md:top-1 md:right-2 font-heading text-xs md:text-base ${textColor} opacity-80 font-bold`}>{section.endYear}</div>
+                  <div className={`absolute -top-4 left-1 md:left-2 font-heading text-xs md:text-sm ${textColor} opacity-80 font-bold`}>{section.startYear}</div>
+                  <div className={`absolute -top-4 right-1 md:right-2 font-heading text-xs md:text-sm ${textColor} opacity-80 font-bold`}>{section.endYear}</div>
 
                   <h2 className={`relative font-heading text-xs xs:text-sm sm:text-base md:text-xl lg:text-2xl text-center ${textColor} font-bold px-1 md:px-2 leading-tight`} style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>
                     {section.title}
@@ -382,7 +382,7 @@ const Timeline = forwardRef<TimelineHandle, TimelineProps>(({ data, onEventSelec
       <button
         onClick={() => navigate('right')}
         disabled={!canScrollRight}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-2 md:p-3 m-1 md:m-2 bg-black/60 rounded-full text-yellow-400 hover:bg-black/80 hover:text-yellow-300 transition-all disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-yellow-400/50"
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-2 md:p-3 m-1 md:m-2 bg-black/60 rounded-full text-yellow-400 hover:bg-black/80 hover:text-yellow-300 transition-all duration-500 ease-out disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-yellow-400/50"
         aria-label="Scroll right"
       >
         <ChevronRightIcon className="w-6 h-6 md:w-8 md:h-8" />
