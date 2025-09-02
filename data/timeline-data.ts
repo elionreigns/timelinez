@@ -10,7 +10,7 @@ import { TimelineSection } from '../types.ts';
 */
 
 // Add a placeholder image URL for events that don't have a real image
-const PLACEHOLDER_IMAGE_URL = 'https://via.placeholder.com/400x300?text=No+Image';
+const PLACEHOLDER_IMAGE_URL = 'https://www.erictheprophet.com/media/prayerauthoritylogo.png';
 
 export const timelineData: TimelineSection[] = [
   {
@@ -37,7 +37,7 @@ export const timelineData: TimelineSection[] = [
         title: "Born at St. Joseph's Hospital",
         description: "I was born at St. Joseph's Hospital in Orange County, marking the beginning of my journey.",
         media: [{
-          url: PLACEHOLDER_IMAGE_URL,
+          url: 'https://www.erictheprophet.com/media/eric-born.jpg',
           type: 'image',
         }],
       },
@@ -219,6 +219,17 @@ export const timelineData: TimelineSection[] = [
     endYear: 2040,
     backgroundImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2670&auto=format&fit=crop',
     events: [
+      {
+        year: 2026,
+        month: 8,
+        day: 1,
+        title: 'Prayer Authority Milestone',
+        description: 'Aim to achieve 100,000 members on Prayer Authority and 500 paid members paying $5/month for access to cool APIs and tools I’ve built.',
+        media: [{
+          url: 'https://www.prayerauthority.com/images/prayer-authority-logo.jpg',
+          type: 'image',
+        }],
+      },
       {
         year: 2027,
         month: 8,
